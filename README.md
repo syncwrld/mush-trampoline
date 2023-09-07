@@ -1,5 +1,5 @@
 ## MushJumpPad
-Copy of mush.com.br jump pad lobby system, now you can stop of asking it to me in my discord dm
+Copy of mush.com.br jump pad lobby system
 
 ## How to use
 Put the jar into your `plugins` folder and restart the server, now you can configure the plugin in `config.yml` file.
