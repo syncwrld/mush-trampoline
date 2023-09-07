@@ -1,0 +1,10 @@
+name: MushJumpPad
+version: '${project.version}'
+main: me.syncwrld.mushjumppad.JumpPadBootstrap
+api-version: '1.13'
+author: syncwrld
+
+commands:
+  pad:
+    aliases:
+      - jumppad

@@ -1,0 +1,18 @@
+# MushJumpPad by syncwrld #
+# www.github.com/syncwrld #
+#
+############
+# Options #
+###########
+jump-power: 1.5
+jump-blocks:
+  - 'WOOL'
+  - 'SLIME'
+########
+# Misc #
+########
+enable-effect: true
+#
+# Don't change anything down #
+#
+places: []
