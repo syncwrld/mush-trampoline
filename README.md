@@ -13,5 +13,9 @@ You can explore the built public versions [by clicking here](https://github.com/
 ## Screenshots
 ![#1](https://github.com/syncwrld/mush-jumppad/assets/85231933/843d6651-2098-44cf-88ac-5a442d3ee2b4)
 ![#2](https://github.com/syncwrld/mush-jumppad/assets/85231933/08dd1738-d875-4eaf-be14-3932a6e4cf52)
+![#3](https://github.com/syncwrld/mush-jumppad/assets/85231933/64b32415-f254-45f9-8ad9-c633a7a9d318)
+![#4](https://github.com/syncwrld/mush-jumppad/assets/85231933/c5aef7c4-c73b-43da-ab4e-1902c5bd5655)
+
+
 
 
