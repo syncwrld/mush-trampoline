@@ -9,3 +9,7 @@ To put a new `Jump Pad`, use `/pad` `(permission: pad.admin)` and put the config
 
 ## Download
 You can explore the built public versions [by clicking here](https://github.com/syncwrld/MushJumpPad/releases)
+
+## Screenshots
+![#1](https://github.com/syncwrld/mush-jumppad/assets/85231933/6cf7d188-8da1-4413-a6f6-fe9d1324413f)
+
