@@ -10,6 +10,12 @@ To put a new `Jump Pad`, use `/pad` `(permission: pad.admin)` and put the config
 ## Download
 You can explore the built public versions [by clicking here](https://github.com/syncwrld/MushJumpPad/releases)
 
+## Extra
+Mini API for Devs. Three events:
+ - PlayerAtPadEvent `(when the block the player is stepping on is a pad )`
+ - JumpPadDeleteEvent `(when a existing pad is removed)`
+ - JumpPadCreateEvent `(when a new pad is created)`
+
 ## Screenshots
 ![#1](https://github.com/syncwrld/mush-jumppad/assets/85231933/843d6651-2098-44cf-88ac-5a442d3ee2b4)
 ![#2](https://github.com/syncwrld/mush-jumppad/assets/85231933/08dd1738-d875-4eaf-be14-3932a6e4cf52)
