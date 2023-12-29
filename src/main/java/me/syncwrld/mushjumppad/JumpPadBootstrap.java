@@ -30,7 +30,7 @@ public final class JumpPadBootstrap extends JavaPlugin {
         setupConfig();
         JumpBlockRegistry.load();
 
-        registerListeners(
+        this.registerListeners(
                 new TriggerBlockPlace(),
                 new TriggerBlockBreak(),
                 new ActionJumpPadCreate(),
