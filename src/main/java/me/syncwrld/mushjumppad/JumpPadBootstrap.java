@@ -11,7 +11,7 @@ import me.syncwrld.mushjumppad.event.raw.TriggerBlockPlace;
 import me.syncwrld.mushjumppad.registry.JumpBlockRegistry;
 import me.syncwrld.mushjumppad.task.PersistentMovementTask;
 import me.syncwrld.mushjumppad.task.PersistentPadEffectTask;
-import org.bstats.bukkit.Metrics;
+import me.syncwrld.mushjumppad.util.Metrics;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
