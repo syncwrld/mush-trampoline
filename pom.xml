@@ -6,7 +6,7 @@
 
     <groupId>me.syncwrld</groupId>
     <artifactId>MushJumpPad</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.1-stable</version>
     <packaging>jar</packaging>
 
     <name>MushJumpPad</name>
