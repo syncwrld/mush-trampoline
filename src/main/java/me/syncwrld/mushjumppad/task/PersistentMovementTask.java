@@ -10,20 +10,17 @@ import org.bukkit.entity.Player;
 
 public class PersistentMovementTask implements Runnable {
 
-    @Override
-    public void run() {
-        for (Player player : Bukkit.getOnlinePlayers()) {
-            Block downBlock = player.getLocation().getBlock().getRelative(BlockFace.DOWN);
-            if (downBlock.isEmpty() || downBlock.getType() == Material.AIR)
-                continue;
+  @Override
+  public void run() {
+    for (Player player : Bukkit.getOnlinePlayers()) {
+      Block downBlock = player.getLocation().getBlock().getRelative(BlockFace.DOWN);
+      if (downBlock.isEmpty() || downBlock.getType() == Material.AIR) continue;
 
-            JumpPadCache cache = new JumpPadCache();
-            if (cache.isPad(downBlock)) {
-                Bukkit.getPluginManager().callEvent(
-                        new PlayerAtPadEvent(player, downBlock)
-                );
-            }
-        }
+      JumpPadCache cache = new JumpPadCache();
+      if (cache.isPad(downBlock)) {
+        Bukkit.getPluginManager().callEvent(new PlayerAtPadEvent(player, downBlock));
+      }
     }
+  }
 
 }

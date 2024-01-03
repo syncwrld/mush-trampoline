@@ -10,21 +10,22 @@ import org.bukkit.Location;
 
 public class PersistentPadEffectTask implements Runnable {
 
-    private final ParticleNativeAPI nativeAPI;
+  private final ParticleNativeAPI nativeAPI;
 
-    public PersistentPadEffectTask(JumpPadBootstrap bootstrap) {
-        this.nativeAPI = bootstrap.getParticleAPI();
-    }
+  public PersistentPadEffectTask(JumpPadBootstrap bootstrap) {
+    this.nativeAPI = bootstrap.getParticleAPI();
+  }
 
-    @Override
-    public void run() {
-        JumpPadCache cache = new JumpPadCache();
-        for (Location location : cache.getLocationMap()) {
-            nativeAPI.LIST_1_8.VILLAGER_HAPPY.packet(
-                    true, location
-                            .add(0.7, 1.2, 0.5)
-            ).sendInRadiusTo(Bukkit.getOnlinePlayers(), 10);
-        }
+  @Override
+  public void run() {
+    JumpPadCache cache = new JumpPadCache();
+    for (Location location : cache.getLocationMap()) {
+      nativeAPI
+          .LIST_1_8
+          .VILLAGER_HAPPY
+          .packet(true, location.add(0.7, 1.2, 0.5))
+          .sendInRadiusTo(Bukkit.getOnlinePlayers(), 10);
     }
+  }
 
 }

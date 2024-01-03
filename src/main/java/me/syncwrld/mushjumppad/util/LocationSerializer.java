@@ -11,30 +11,33 @@ public final class LocationSerializer extends Location {
   }
 
   public static String serializeLocation(Location loc) {
-    return loc.getWorld().getName() + ','
-          + loc.getX() + ','
-          + loc.getY() + ','
-          + loc.getZ() + ','
-          + loc.getYaw() + ','
-          + loc.getPitch();
+    return loc.getWorld().getName()
+        + ','
+        + loc.getX()
+        + ','
+        + loc.getY()
+        + ','
+        + loc.getZ()
+        + ','
+        + loc.getYaw()
+        + ','
+        + loc.getPitch();
   }
 
   public static Location deserializeLocation(String s) {
     String[] location = s.split(",");
 
-    if (Bukkit.getWorld(location[0]) == null)
-      return null;
+    if (Bukkit.getWorld(location[0]) == null) return null;
 
-    if (location.length < 5)
-      return null;
+    if (location.length < 5) return null;
 
     return new Location(
-          Bukkit.getWorld(location[0]),
-          Double.parseDouble(location[1]),
-          Double.parseDouble(location[2]),
-          Double.parseDouble(location[3]),
-          Float.parseFloat(location[4]),
-          Float.parseFloat(location[5]));
+        Bukkit.getWorld(location[0]),
+        Double.parseDouble(location[1]),
+        Double.parseDouble(location[2]),
+        Double.parseDouble(location[3]),
+        Float.parseFloat(location[4]),
+        Float.parseFloat(location[5]));
   }
 
 }

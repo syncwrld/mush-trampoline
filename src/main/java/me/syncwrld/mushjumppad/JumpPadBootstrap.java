@@ -20,51 +20,47 @@ import java.io.File;
 
 public final class JumpPadBootstrap extends JavaPlugin {
 
-    public static Plugin getInstance() {
-        return JavaPlugin.getPlugin(JumpPadBootstrap.class);
+  public static Plugin getInstance() {
+    return JavaPlugin.getPlugin(JumpPadBootstrap.class);
+  }
+
+  @Override
+  public void onEnable() {
+    Metrics metrics = new Metrics(this, 19746);
+    setupConfig();
+    JumpBlockRegistry.load();
+
+    this.registerListeners(
+        new TriggerBlockPlace(),
+        new TriggerBlockBreak(),
+        new ActionJumpPadCreate(),
+        new ActionJumpPadDelete(),
+        new ActionPlayerJumpInPad());
+
+    this.getServer().getScheduler().runTaskTimer(this, new PersistentMovementTask(), 0L, 2L);
+
+    if (this.getConfig().getBoolean("enable-effect")) {
+      this.getServer()
+          .getScheduler()
+          .runTaskTimer(this, new PersistentPadEffectTask(this), 0L, 10L);
     }
 
-    @Override
-    public void onEnable() {
-        Metrics metrics = new Metrics(this, 19746);
-        setupConfig();
-        JumpBlockRegistry.load();
+    this.getCommand("pad").setExecutor(new PadCommand(this));
+  }
 
-        this.registerListeners(
-                new TriggerBlockPlace(),
-                new TriggerBlockBreak(),
-                new ActionJumpPadCreate(),
-                new ActionJumpPadDelete(),
-                new ActionPlayerJumpInPad()
-        );
+  private void setupConfig() {
+    File configFile = new File(this.getDataFolder(), "config.yml");
+    if (!configFile.exists()) saveResource("config.yml", false);
+  }
 
-        this.getServer().getScheduler().runTaskTimer(
-                this, new PersistentMovementTask(), 0L, 2L
-        );
-
-        if (this.getConfig().getBoolean("enable-effect")) {
-            this.getServer().getScheduler().runTaskTimer(
-                    this, new PersistentPadEffectTask(this), 0L, 10L
-            );
-        }
-
-        this.getCommand("pad").setExecutor(new PadCommand());
+  private void registerListeners(Listener... listeners) {
+    for (Listener listener : listeners) {
+      this.getServer().getPluginManager().registerEvents(listener, this);
     }
+  }
 
-    private void setupConfig() {
-        File configFile = new File(this.getDataFolder(), "config.yml");
-        if (!configFile.exists())
-            saveResource("config.yml", false);
-    }
-
-    private void registerListeners(Listener... listeners) {
-        for (Listener listener : listeners) {
-            this.getServer().getPluginManager().registerEvents(listener, this);
-        }
-    }
-
-    public ParticleNativeAPI getParticleAPI() {
-        return ParticleNativeCore.loadAPI(this);
-    }
+  public ParticleNativeAPI getParticleAPI() {
+    return ParticleNativeCore.loadAPI(this);
+  }
 
 }

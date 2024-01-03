@@ -3,6 +3,7 @@ version: '${project.version}'
 main: me.syncwrld.mushjumppad.JumpPadBootstrap
 api-version: '1.13'
 author: syncwrld
+website: https://github.com/syncwrld/mush-jumppad
 
 commands:
   pad:

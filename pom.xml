@@ -30,18 +30,24 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.4.1</version>
+                <version>3.2.4</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
                         <goals>
                             <goal>shade</goal>
                         </goals>
+
                         <configuration>
-                            <relocations>
+                           <relocations>
                                 <relocation>
                                     <pattern>com.github.fierioziy.particlenativeapi</pattern>
-                                    <shadedPattern>me.syncwrld.libs.particleapi</shadedPattern>
+                                    <shadedPattern>me.syncwrld.mushjumppad.libs.particlenativeapi</shadedPattern>
+                                </relocation>
+
+                                <relocation>
+                                    <pattern>org.bstats</pattern>
+                                    <shadedPattern>me.syncwrld.mushjumppad.libs.bstats</shadedPattern>
                                 </relocation>
                             </relocations>
                         </configuration>
@@ -78,10 +84,15 @@
         </dependency>
 
         <dependency>
+            <groupId>com.github.cryptomorin</groupId>
+            <artifactId>XSeries</artifactId>
+            <version>9.8.1</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.github.fierioziy.particlenativeapi</groupId>
             <artifactId>ParticleNativeAPI-core</artifactId>
             <version>4.1.0</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
 </project>
