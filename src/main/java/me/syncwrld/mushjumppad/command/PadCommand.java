@@ -87,10 +87,13 @@ public class PadCommand implements CommandExecutor {
   }
 
   void handleReload(CommandSender commandSender) {
+    if (!commandSender.hasPermission("pad.admin")) {
+      commandSender.sendMessage("§cYou can't execute this command.");
+      return;
+    }
     Stopwatch started = Stopwatch.createStarted();
     plugin.reloadConfig();
     JumpBlockRegistry.load();
     commandSender.sendMessage("§aConfiguration reloaded in " + started.stop().toString() + ".");
   }
-
 }
